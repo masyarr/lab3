@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №3 - Трехколоночный макет</title>
+    <link rel="stylesheet" href="3-1.css">
+</head>
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <div class="header">
+        <h1>INSTRUCTIONAL DESIGN</h1>
+    </div>
+
+    <!-- ГОРИЗОНТАЛЬНОЕ МЕНЮ (float: left) -->
+    <div class="nav">
+        <a href="#">Главная</a>
+        <a href="#">Новости</a>
+        <a href="#">Отделы продаж</a>
+        <a href="#">Поставщики</a>
+        <a href="#">Контакты</a>
+        <a href="#">О нас</a>
+    </div>
+
+    <!-- ТРЕХКОЛОНОЧНЫЙ МАКЕТ -->
+    <!-- ВАЖНО! Сначала левый блок, потом правый, потом центральный -->
+    <div class="clearfix">
+        
+        <!-- ЛЕВЫЙ БЛОК - float: left -->
+        <div class="left">
+            <h3>Новости</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iste accusamus rerum omnis adipisci corporis est possimus dolor sit vero, cumque incidunt exercitationem quibusdam reprehenderit harum asperiores. Qui natus voluptatem optio!</p>
+            
+            <hr>
+            
+            <h3>Контакты</h3>
+            <p>Адрес: г. Уфа, ул. Заки Валиди 32/10 </p>
+            <p>Телефон: 8-999-999-99-99</p>
+            <p>Email: info@design.ru</p>
+        </div>
+
+        <!-- ПРАВЫЙ БЛОК - float: right -->
+        <div class="right">
+            <h3>Услуги</h3>
+            <p>• Разработка дизайна</p>
+            <p>• Разработка web-приложений</p>
+            <p>• Разработка web-сервисов</p>
+            <p>• Адаптивная верстка</p>
+            <p>• JavaScript разработка</p>
+        </div>
+
+        <!-- ЦЕНТРАЛЬНЫЙ БЛОК - overflow: hidden (НЕ плавающий!) -->
+        <div class="center">
+            <h3>Наши приложения</h3>
+            
+            <!-- КОНТЕЙНЕР ДЛЯ ИКОНОК -->
+            <div class="icons">
+                
+                <!-- ИКОНКА 1 с наплывающим блоком -->
+                <div class="icon">
+                    <img src="tw.jpg" alt="Twitter">
+                    <div class="tooltip">Twitter</div>
+                </div>
+                
+                <!-- ИКОНКА 2 с наплывающим блоком -->
+                <div class="icon">
+                    <img src="wt.jpg" alt="WhatsApp">
+                    <div class="tooltip">WhatsApp</div>
+                </div>
+                
+                <!-- ИКОНКА 3 с наплывающим блоком -->
+                <div class="icon">
+                    <img src="tg.jpg" alt="Telegram">
+                    <div class="tooltip">Telegram</div>
+                </div>
+                
+                <!-- ИКОНКА 4 с наплывающим блоком -->
+                <div class="icon">
+                     <img src="vk.jpg" alt="ВКонтакте">
+                    <div class="tooltip">ВКонтакте</div>
+                </div>
+                
+                <!-- ИКОНКА 5 с наплывающим блоком -->
+                <div class="icon">
+                    <img src="inst.jpg" alt="Instagram">
+                    <div class="tooltip">Instagram</div>
+                </div>
+                
+                <!-- ИКОНКА 6 с наплывающим блоком -->
+                <div class="icon">
+                    <img src="mx.jpg" alt="Макс">
+                    <div class="tooltip">Max</div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

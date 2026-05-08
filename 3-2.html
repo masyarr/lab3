@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №3 - Вертикальное меню (двойная вложенность)</title>
+    <style>
+        /* =============================================== */
+        /* ЛАБОРАТОРНАЯ РАБОТА №3 - ЗАДАНИЕ 2*             */
+        /* Вертикальное меню с ДВОЙНОЙ вложенностью        */
+        /* Подменю появляется СПРАВА                        */
+        /* =============================================== */
+
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ОСНОВНОЕ МЕНЮ (вертикальное) */
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 200px;
+        }
+
+        /* ПУНКТЫ ОСНОВНОГО МЕНЮ */
+        .menu li {
+            position: relative;    /* необходимо для позиционирования подменю */
+            background: linear-gradient(to bottom, #d0d0d0, #b0b0b0);
+            border-bottom: 1px solid #999;
+            font-weight: bold;
+        }
+
+        /* ССЫЛКИ В ОСНОВНОМ МЕНЮ */
+        .menu li a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* ИЗМЕНЕНИЕ ФОНА ПРИ НАВЕДЕНИИ */
+        .menu li:hover {
+            background: linear-gradient(to bottom, #c0c0c0, #a0a0a0);
+        }
+
+        /* ===== ПОДМЕНЮ ПЕРВОГО УРОВНЯ (выезжает СПРАВА) ===== */
+        .submenu {
+            position: absolute;
+            left: 100%;           /* смещаем вправо */
+            top: 0;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 180px;
+            display: none;
+            background: #e8e8e8;
+            border: 1px solid #999;
+            border-left: none;
+        }
+
+        /* ПУНКТЫ ПОДМЕНЮ ПЕРВОГО УРОВНЯ */
+        .submenu li {
+            position: relative;    /* для вложенности ТРЕТЬЕГО уровня */
+            background: linear-gradient(to bottom, #e0e0e0, #c8c8c8);
+            border-bottom: 1px solid #aaa;
+            font-weight: normal;
+        }
+
+        .submenu li a {
+            padding: 8px 12px;
+            color: #222;
+        }
+
+        .submenu li:hover {
+            background: linear-gradient(to bottom, #d0d0d0, #b8b8b8);
+        }
+
+        /* ===== ПОДМЕНЮ ВТОРОГО УРОВНЯ (двойная вложенность) ===== */
+        /* выезжает СПРАВА от первого подменю */
+        .submenu2 {
+            position: absolute;
+            left: 100%;           /* смещаем вправо */
+            top: 0;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 170px;
+            display: none;
+            background: #ddd;
+            border: 1px solid #888;
+            border-left: none;
+        }
+
+        /* ПУНКТЫ ПОДМЕНЮ ВТОРОГО УРОВНЯ */
+        .submenu2 li {
+            background: linear-gradient(to bottom, #d5d5d5, #bebebe);
+            border-bottom: 1px solid #999;
+            font-weight: normal;
+        }
+
+        .submenu2 li a {
+            padding: 8px 12px;
+            color: #111;
+            font-size: 13px;
+        }
+
+        .submenu2 li:hover {
+            background: linear-gradient(to bottom, #c5c5c5, #aeaeae);
+        }
+
+        /* ===== ОТОБРАЖЕНИЕ ПОДМЕНЮ ПРИ НАВЕДЕНИИ ===== */
+        .menu li:hover .submenu {
+            display: block;        /* показываем подменю 1 уровня */
+        }
+
+        /* при наведении на пункт с подменю 2 уровня - показываем его */
+        .submenu li:hover .submenu2 {
+            display: block;        /* показываем подменю 2 уровня */
+        }
+    </style>
+</head>
+<body>
+    <!-- ВЕРТИКАЛЬНОЕ МЕНЮ С ДВОЙНОЙ ВЛОЖЕННОСТЬЮ -->
+    <ul class="menu">
+        <!-- Пункт 1: ГЛАВНАЯ (с подменю 1 уровня) -->
+        <li>
+            <a href="#">ГЛАВНАЯ</a>
+            <ul class="submenu">
+                <li><a href="#">Главная страница</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">О нас</a></li>
+            </ul>
+        </li>
+        
+        <!-- Пункт 2: ОТДЕЛЫ ПРОДАЖ (без подменю) -->
+        <li>
+            <a href="#">ОТДЕЛЫ ПРОДАЖ</a>
+        </li>
+        
+        <!-- Пункт 3: ПОСТАВЩИКИ (с подменю 1 уровня и ДВОЙНОЙ вложенностью) -->
+        <li>
+            <a href="#">ПОСТАВЩИКИ</a>
+            <ul class="submenu">
+                <!-- Подменю 1 уровня -->
+                <li>
+                    <a href="#">ООО "Дизайн"</a>
+                    <!-- ПОДМЕНЮ 2 УРОВНЯ (двойная вложенность) -->
+                    <ul class="submenu2">
+                        <li><a href="#">Отдел маркетинга</a></li>
+                        <li><a href="#">Отдел продаж</a></li>
+                        <li><a href="#">Технический отдел</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ООО "Арт"</a>
+                    <!-- ПОДМЕНЮ 2 УРОВНЯ (двойная вложенность) -->
+                    <ul class="submenu2">
+                        <li><a href="#">Контакты директора</a></li>
+                        <li><a href="#">Отдел кадров</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">ООО "Фотостиль"</a>
+                    <!-- ПОДМЕНЮ 2 УРОВНЯ (двойная вложенность) -->
+                    <ul class="submenu2">
+                        <li><a href="#">Студия в Москве</a></li>
+                        <li><a href="#">Студия в СПб</a></li>
+                        <li><a href="#">Студия в Казани</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        
+        <!-- Пункт 4: НАШИ УСЛУГИ (с подменю 1 уровня) -->
+        <li>
+            <a href="#">НАШИ УСЛУГИ</a>
+            <ul class="submenu">
+                <li><a href="#">Веб-дизайн</a></li>
+                <li><a href="#">Разработка сайтов</a></li>
+                <li><a href="#">Мобильные приложения</a></li>
+            </ul>
+        </li>
+        
+        <!-- Пункт 5: КОНТАКТЫ (без подменю) -->
+        <li>
+            <a href="#">КОНТАКТЫ</a>
+        </li>
+        
+        <!-- Пункт 6: О НАС (без подменю) -->
+        <li>
+            <a href="#">О НАС</a>
+        </li>
+    </ul>
+</body>
+</html>
